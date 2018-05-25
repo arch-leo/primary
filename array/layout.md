@@ -12,11 +12,28 @@ HTML:
     </div>
   </body>
 CSS:
-  <style>
-    *{margin:0;padding:0;}
-    .box{margin:0 10px;height:0;padding-bottom:calc(50% - 10px);background:#f54343;position:relative;}
-    .box div{position:absolute;left:0;top:0;bottom:0;right:0;display:flex;justify-content:center;align-items:center;}
-  </style>
+  *{margin:0;padding:0;}
+  .box{margin:0 10px;height:0;padding-bottom:calc(50% - 10px);background:#f54343;position:relative;}
+  .box div{position:absolute;left:0;top:0;bottom:0;right:0;display:flex;justify-content:center;align-items:center;}
 ```
 #### 效果预览
 ![preview](https://github.com/arch-leo/primary/blob/master/images/1.jpg)
+
+>2.需求  
+* A元素水平垂直居中
+```js
+HTML:
+  <body>
+    <div class="box">
+      <div>哈哈哈哈啊哈</div>
+    </div>
+  </body>
+CSS:
+  *{margin:0;padding:0;}
+  html{height:100%;}
+  body{height:100%;}
+  .box{height:100%;background:#000;position:relative;}
+  .box div{height:50%;width:50%;background:#f54343;position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;color:#fff;}
+```
+#### 效果预览
+![preview](https://github.com/arch-leo/primary/blob/master/images/2.jpg)
