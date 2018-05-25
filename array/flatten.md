@@ -1,15 +1,16 @@
 # 数组扁平化
 * 二维数组
+> const arr = [[1, 2], 3, 4]
 ```js
-const arr = [[1, 2], 3, 4]
+
 // apply
 console.log([].concat.apply([], arr))    // [1, 2, 3, 4]
 // ...扩展运算符
 console.log([].concat(...arr))           // [1, 2, 3, 4]
 ```
 * 多维数组
+> const arr = [[1, 2], [[3, 4], 5, 6], [[[[[7, 8], 9, 10], 11, 12], 13, 14], 15, 16], 17, 18]
 ```js
-const arr = [[1, 2], [[3, 4], 5, 6], [[[[[7, 8], 9, 10], 11, 12], 13, 14], 15, 16], 17, 18]
 // 完全扁平化 forEach
 const res = []
 function flatten(arr) {
