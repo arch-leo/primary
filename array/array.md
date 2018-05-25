@@ -104,7 +104,7 @@ function insertSort(array) {
 }
 console.log(insertSort(arr))
 
-// 方法2 sort排序
+// 方法3 sort排序
 arr.sort(function(a, b){
   return a-b
 })
