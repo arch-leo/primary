@@ -18,4 +18,5 @@ CSS:
     .box div{position:absolute;left:0;top:0;bottom:0;right:0;display:flex;justify-content:center;align-items:center;}
   </style>
 ```
+#### 效果预览
 ![preview](https://github.com/arch-leo/primary/blob/master/images/1.jpg)
