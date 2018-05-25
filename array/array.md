@@ -1,4 +1,4 @@
-## 检测是否为数组
+## 检测数组
 > const arr = [1, 2, 3]
 ```js
 //isArray	true
