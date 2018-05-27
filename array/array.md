@@ -1,14 +1,20 @@
 ## 检测数组
 > const arr = [1, 2, 3]
 ```js
-//isArray	true
-console.log(Array.isArray(arr))
-
 //instanceof	true
+//注： 同一个页面可能含有多个iframe (也就有了多个 window => window.frames)
+//多个window 也就意味着多个Array的引用 instanceof 就可能 返回 false
 console.log(arr instanceof Array)
 
-//原型链    true
+//isArray	true  可以解决instanceof的bug 不过属于es6
+console.log(Array.isArray(arr))
+
+//原型链    true 同instanceof
 console.log(arr.__proto__.constructor == Array)
+
+//原型链    true 最优检测方式
+console.log(Object.prototype.toString.call(arr) == '[object Array]')
+
 ```
 ## arguments 转数组？
 > function transfer(a, b, c){console.log(arguments)}
