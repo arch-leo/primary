@@ -18,8 +18,8 @@ console.log(Object.prototype.toString.call(arr) == '[object Array]')
 ```
 ## arguments 转数组？
 > function transfer(a, b, c){console.log(arguments)}
-  这里的arguments 不是数组 是对象 
-  Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+> 这里的arguments 不是数组 是对象 
+> Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
 ```js
 //Array.prototype.slice.call(arguments)能将具有 length 属性的对象转成数组，
 //除了IE下的节点集合（因为ie下的dom对象是以com对象的形式实现的，js对象与com对象不能进行转换）
