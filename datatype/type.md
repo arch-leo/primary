@@ -15,7 +15,6 @@ console.log(typeof undefined)     // 'undefined'
 ## 引用数据类型
 > 存放在堆(heap)内存中的对象，变量实际保存的是一个指针，这个指针指向另一个位置。     
 > Object
-  > 内置对象 Array, Function, Date, RegExp, Buffer, Set, Map...  
 ```js
 栗子 
   new Array(3) 
