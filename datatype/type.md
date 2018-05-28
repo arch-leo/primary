@@ -73,13 +73,58 @@ console.log(typeof undefined) 		  // 'undefined'
   let map = new Map([['a',1], ['b', 2]]]);
   console.log(map.constructor)    //function Map() { [native code] }
   console.log(map.size)           //2
-2.方法
-  //Iterator对象：可以使用for..of进行迭代的对象
-  let map = new Map([[1, 'one'],[2, 'two'], [3, 'three']]);
+2.方法  
+  --- set(key, value) 设置键名key对应的键值为value，然后返回整个 Map 结构。如果key已经有值，则键值会被更新，否则就新生成该键。
+
+      map.set('qwe', '123').set('new', 'fq').set('yu', 'li');
+      console.log(map); //{"a" => 1, "b" => 2, "qwe" => "123", "new" => "fq", "yu" => "li"}
+      
+  --- get(key) get方法读取key对应的键值，如果找不到 key，返回undefined。
+
+      console.log(map.get('new')); //true
+      console.log(map.get('x')); //false
+      
+  --- delete(key) 删除某个键，返回true。如果删除失败，返回false。
+
+      console.log(map.delete('a')); //true
+      console.log(map); //{ "b" => 2, "qwe" => "123", "new" => "fq", "yu" => "li"}
+      console.log(map.delete('a')); //false
+  --- has(key) 方法返回一个布尔值，表示某个键是否在当前Map对象之中。
+
+      console.log(map.has('yu')); //true
+      console.log(map.has('a')); //false
+      
+  --- clear() 清除所有数据，没有返回值。
   
-  --- Map.prototype.clear() 移除Map对象的所有键值对。  map.clear()
-  --- Map.prototype.delete(key) 移除任何与键相关联的值，并且返回该值  map.delete(1)
-  --- 
+      map.clear(); console.log(map); // {}
+      
+  --- keys() 返回键名的遍历器
+  
+      console.log(map.keys());
+      
+  --- values() 返回键值的遍历器
+  
+      console.log(map.values());
+      
+  --- entries() 返回键值对的遍历器
+  
+      console.log(map.entries());
+      
+  --- forEach() 使用回调函数遍历每个成员
+
+      map.forEach(function(value, key, mapObj) {
+          console.log(value + '---' + key + '---' + mapObj);
+          //value - Map对象里每一个键值对的值
+          //key - Map对象里每一个键值对的键
+          //mapObj - Map对象本身
+          console.log(this); //this === window
+      });
+
+      map.forEach(function(value, key, mapObj) {
+          console.log(value + '---' + key + '---' + mapObj);
+          console.log(this);    //this === map
+      }, map)
+
 ```
 
 
