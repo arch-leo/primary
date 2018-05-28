@@ -22,10 +22,8 @@
   > 所以通过这种方式多个实例就能共享保存在原型中的属性和方法。这也是js的原型链。)
   ```js
     var obj = new Object();
-    对象是有原型对象的
-    原型对象也有原型对象 
+    //对象是有原型对象的，原型对象也有原型对象 对象的原型对象一直往上找，会找到一个null
       obj._proto_._proto_._proto_
-    原型对象也有原型对象，对象的原型对象一直往上找，会找到一个null
     // 原型链示例
       var arr = [];
       arr -> Array.prototype ->Object.prototype -> null
@@ -47,6 +45,7 @@
     }
     var p = new Person('小明')
     p.sayName()		//Person:小明
+    
     解释：
       p.prototype.__proto__ === Person.prototype   //true
   ```
@@ -65,6 +64,7 @@
     }
     var p = new Person('小明')
     p.sayName()		//Object:小明  ==>  为什么不是 Function:小明 
+    
     解释：
       Function.prototype.__proto__ !== Function.prototype   //true
       Function.prototype.__proto__ === Object.prototype   //true
