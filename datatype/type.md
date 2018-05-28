@@ -78,16 +78,16 @@ console.log(typeof undefined)     // 'undefined'
   --- forEach() 使用回调函数遍历每个成员
       
       var set = new Set([1, 2, 3])
-      set.forEach(function(value, key, mapObj) {
-          console.log(value + '---' + key + '---' + mapObj);
+      set.forEach(function(value, key, setObj) {
+          console.log(value + '---' + key + '---' + setObj);
           //value - Map对象里每一个键值对的值
           //key - Map对象里每一个键值对的键
           //mapObj - Map对象本身
           console.log(this); //this === window
       });
 
-      set.forEach(function(value, key, mapObj) {
-          console.log(value + '---' + key + '---' + mapObj);
+      set.forEach(function(value, key, setObj) {
+          console.log(value + '---' + key + '---' + setObj);
           console.log(this);    //this === map
       }, set)
 ```
