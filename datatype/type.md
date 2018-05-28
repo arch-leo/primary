@@ -4,14 +4,14 @@
 ```js
 用typeof可以检测出变量的基本数据类型，但是有个特例，就是null的typeof返回的是object，这个是javascript的历史Bug
 ES6新增数据类型Symbol: 表示独一无二的值 不能用new去实例
-console.log(typeof Symbol()) 		    // 'symbol'
-console.log(typeof 1) 				      // 'number'
-console.log(typeof '1') 			      // 'string'
-console.log(typeof function a() {}) // 'function'
-console.log(typeof {}) 				      // 'object'
-console.log(typeof true) 			      // 'boolean'
-console.log(typeof null) 			      // 'object'
-console.log(typeof undefined) 		  // 'undefined'
+console.log(typeof Symbol())      // 'symbol'
+console.log(typeof 1)     // 'number'
+console.log(typeof '1')     // 'string'
+console.log(typeof function a() {})     // 'function'
+console.log(typeof {})      // 'object'
+console.log(typeof true)      // 'boolean'
+console.log(typeof null)      // 'object'
+console.log(typeof undefined)     // 'undefined'
 ```
 ## 引用数据类型
 > 存放在堆(heap)内存中的对象，变量实际保存的是一个指针，这个指针指向另一个位置。     
@@ -73,6 +73,7 @@ console.log(typeof undefined) 		  // 'undefined'
   let map = new Map([['a',1], ['b', 2]]]);
   console.log(map.constructor)    //function Map() { [native code] }
   console.log(map.size)           //2
+
 2.方法  
   --- set(key, value) 设置键名key对应的键值为value，然后返回整个 Map 结构。如果key已经有值，则键值会被更新，否则就新生成该键。
 
