@@ -2,7 +2,12 @@
 > js 中的所有事物都是对象：字符串、数字、数组、日期，等等。
 > 在 js 中，对象是拥有属性和方法的数据。   
 > ECMA-262把对象定义为：无序属性的集合，其属性可以包含基本值，对象或者函数。
-
+## 对象分类
+> 本地对象：独立于宿主环境的 ECMAScript 实现提供的对象   
+  * 常见的 Object, Function, Array, String, Boolean, Number, Date, RegExp, Error,   
+  * 不常见的 EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError   
+> 内置对象：由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现
+> 宿主对象：由 ECMAScript 实现的宿主环境提供的对象。所有 BOM 和 DOM 对象都是宿主对象。
 ## 创建对象方式
 * 通过Object构造函数创建对象
 ```js
