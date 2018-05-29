@@ -98,7 +98,7 @@ function bubbleSort1(arr) {
       if(arr[j] < arr[j-1]) {
         arr[j] += arr[j-1];
         arr[j-1] = arr[j] - arr[j-1];
-        arr[j] =arr[j] - arr[j-1];
+        arr[j] = arr[j] - arr[j-1];
       }
     }
   }
