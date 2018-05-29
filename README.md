@@ -1,4 +1,4 @@
-## js知识点
+## 知识点总结与巩固
 
 ![chiji](https://github.com/arch-leo/primary/blob/master/timg.jpg)
 
