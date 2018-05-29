@@ -155,5 +155,165 @@
         在构造函数中同时使用了构造函数和原型，这就成了动态原型模式。
         真正用的时候要通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。。
 ```
+## Object 属性（原型链）
+* Object.prototype.writable：属性是否可以被赋值 默认false
+* Object.prototype.enumerable：属性是否可以被枚举 默认false
+  > 影响到的函数 for…in Object.keys() JSON.stringify()
+* Object.prototype.configurable：属性是否可配置 默认为false 
+* Object.prototype.constructor：用于创建一个对象的原型。 
+
+## Object 方法（原型链）
+
+* hasOwnProperty  返回一个布尔值，表示某个对象是否含有指定的属性，而且此属性非原型链继承。
+```js
+  var obj = {a: 0}
+  obj.hasOwnProperty('a')   //true
+  obj.hasOwnProperty('b')   //false
+```
+* isPrototypeOf   返回一个布尔值，表示指定的对象是否在本对象的原型链中。
+```js
+  var a = {
+    b: 0
+  }
+  var c = [1, 2]
+  var d = function() {}
+  console.log(Object.prototype.isPrototypeOf(a)) //true
+  console.log(Array.prototype.isPrototypeOf(c)) //true
+  console.log(Object.prototype.isPrototypeOf(c)) //true
+  console.log(Function.prototype.isPrototypeOf(d)) //true
+  console.log(Object.prototype.isPrototypeOf(d)) //true
+```
+* propertyIsEnumerable  判断指定属性是否可枚举。通常原型链或预定义的属性 返回false，自定义返回true
+```js
+  var obj = {a: 1}
+  var arr = [1, 2, 3]
+  Object.prototype.hhhh = 'hello world'
+  console.log(obj.a, obj.hhhh)  //1 "hello world"
+  console.log(obj.propertyIsEnumerable('a'))  //true
+  console.log(obj.propertyIsEnumerable('hhhh')) //false
+  console.log(arr.propertyIsEnumerable(1))  //true
+```
+* toString 返回对象的字符串表示。
+```js
+  var a = {
+    b: 0
+  }
+  var c = [1, 2]
+  var d = function() {}
+  console.log(a.toString()) //[object Object]
+  console.log(c.toString()) //1,2
+  console.log(d.toString()) //function () {}
+```
+* valueOf() 返回指定对象的原始值。
+```js
+  var a = {
+    b: 0
+  }
+  var c = [1, 2]
+  var d = function() {}
+  console.log(a.valueOf()) //{b: 0}
+  console.log(c.valueOf()) //[1, 2]
+  console.log(d.valueOf()) //ƒ () {}
+```
+* watch 给对象的某个属性增加监听; unwatch 移除对象某个属性的监听。 不推荐使用，性能、兼容性问题
+## Object 方法（自身）
+* Object.assign(target, …sources) 把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。
+```js
+  var obj = {a: 1};
+  var copy = Object.assign({}, obj);
+  copy.name = '111'
+  console.log(copy); // {a: 1};
+
+  var o1 = {a: 1};
+  var o2 = {b: 2};
+  var o3 = {c: 3};
+
+  var obj = Object.assign(o1, o2, o3);
+  console.log(obj); //{a: 1, b: 2, c: 3}
+  console.log(o1); //{a: 1, b: 2, c: 3}, 目标对象被改变了
+```
+* 属性描述符 分 数据描述符和存取描述符
+> 数据描述符和存取描述符是一个具有值的属性，该值可能是可写的，也可能不是可写的。
+> 存取描述符是由getter-setter函数对描述的属性。
+> 描述符必须是这两种形式之一；不能同时是两者。
+```js
+  configurable
+    当且仅当该属性的 configurable 为 true 时，该属性描述符才能够被改变，
+    同时该属性也能从对应的对象上被删除。默认为 false。
+    
+  enumerable
+    当且仅当该属性的enumerable为true时，该属性才能够出现在对象的枚举属性中。默认为 false。
+    数据描述符同时具有以下可选键值：
+
+  value
+    该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。默认为 undefined。
+    
+  writable
+    当且仅当该属性的writable为true时，value才能被赋值运算符改变。默认为 false。
+    存取描述符同时具有以下可选键值：
+
+  get
+    一个给属性提供 getter 的方法，如果没有 getter 则为 undefined。
+    该方法返回值被用作属性值。默认为 undefined。
+    
+  set
+    一个给属性提供 setter 的方法，如果没有 setter 则为 undefined。
+    该方法将接受唯一参数，并将该参数的新值分配给该属性。默认为 undefined。
+```
+> ![props](https://github.com/arch-leo/primary/blob/master/images/3.jpg)  
+>    
+* Object.defineProperty(obj, prop, descriptor) 直接在一个对象上定义一个新属性，或者修改一个已经存在的属性， 并返回这个对象。
+> obj：需要定义属性的对象。prop：需定义或修改的属性的名字。descriptor：将被定义或修改的属性的描述符。
+
+
+
+
+
+* Object.create(proto, props) 创建一个拥有指定原型和若干个指定属性的对象。
+> props 对应Object.defineProperties(obj, props)的第二个参数
+```js
+  var obj = Object.create(null)	// 无原型的对象	
+  console.log(obj)	//{} 无原型
+  obj.name = '1111'
+  console.log(obj)	//{name: "1111"}
+  console.log(obj.__proto__)	//undefined
+
+  function Person () {}
+  var o = Object.create(Person.prototype, {
+    a: {
+      value: 0,
+      configureable: true,
+      enumerable: true,
+      writable: false
+    },
+    b: {
+      value: 1,
+      configureable: true,
+      enumerable: false,
+      writable: true
+    }
+  })
+  console.log(o) //Person {a: 0, b: 1}
+  console.log(o.a) //0
+  console.log(o.b) //1
+  o.a = 2
+  o.b = 3
+  console.log(o) //Person {a: 0, b: 3}
+  console.log(o.a) //0
+  console.log(o.b) //3
+
+  for(var key in o) {
+    console.log('key: ' + key)	// key: a
+  }
+```
+
+
+
+
+
+
+
+
+
 
 ### 未完待续
