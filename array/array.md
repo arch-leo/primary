@@ -91,6 +91,21 @@ function bubbleSort(array) {
 }
 console.log(bubbleSort(arr))    //  [1, 1, 3, 5, 6]
 
+function bubbleSort1(arr) {
+  if(arr == null || arr.length <= 1) { return }
+  for (var i = 0,len = arr.length;i < len; i++) {
+    for (var j = len - 1; j > i; j--) {
+      if(arr[j] < arr[j-1]) {
+        arr[j] += arr[j-1];
+        arr[j-1] = arr[j] - arr[j-1];
+        arr[j] =arr[j] - arr[j-1];
+      }
+    }
+  }
+  return arr;
+}
+console.log(bubbleSort1(arr))    //  [1, 1, 3, 5, 6]
+
 // 方法2 插入排序
 function insertSort(array) {
   var j, temp, key, len = array.length;
