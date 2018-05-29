@@ -264,11 +264,63 @@
 >    
 * Object.defineProperty(obj, prop, descriptor) 直接在一个对象上定义一个新属性，或者修改一个已经存在的属性， 并返回这个对象。
 > obj：需要定义属性的对象。prop：需定义或修改的属性的名字。descriptor：将被定义或修改的属性的描述符。
-
-
-
-
-
+```js
+   var a = {b: 1}
+   Object.defineProperty(a, 'name', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: '张三'
+   })
+   console.log(a) //{b: 1, name: "张三"}
+   a.name = '李四'
+   console.log(a) //{b: 1, name: "张三"}
+   console.log(Object.keys(a)) //["b"]
+```
+```js
+   var a = {b: 1}
+   Object.defineProperty(a, 'name', {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: '张三'
+   })
+   console.log(a) //{b: 1, name: "张三"}
+   a.name = '李四'
+   console.log(a) //{b: 1, name: "李四"}
+   console.log(Object.keys(a)) //["b", "name"]
+```
+* Object.defineProperties(obj, props) 在一个对象上添加或修改一个或者多个自有属性，并返回该对象 
+```js
+  var a = {b: 1}
+  var age
+  Object.defineProperties(a, {
+    name: {
+      enumerable: false,
+      configurable: false,
+      writable: true,
+      value: '张三'
+    },
+    age: {
+      enumerable: true,
+      configurable: true,
+      set: function(value) {
+        age = value
+      },
+      get: function() {
+        return age
+      }
+    }
+  })
+  console.log(a) //{b: 1, name: "张三"}
+  console.log(Object.keys(a))	//["b", "age"]
+  console.log(JSON.stringify(a))	//{"b":1}
+  a.name = '李四'
+  a.age = 18
+  console.log(a) //{b: 1, name: "李四"}
+  console.log(Object.keys(a))	//["b", "age"]
+  console.log(JSON.stringify(a))	//{"b":1,"age":18}
+```
 * Object.create(proto, props) 创建一个拥有指定原型和若干个指定属性的对象。
 > props 对应Object.defineProperties(obj, props)的第二个参数
 ```js
