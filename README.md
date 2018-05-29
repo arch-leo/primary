@@ -15,6 +15,6 @@
 * [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/array/flatten.md)
 * [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/calc.md)
 
-### 布局相关
+### 布局
 * [对象浅拷贝和深拷贝](https://github.com/arch-leo/primary/blob/master/datatype/copy.md)
 
