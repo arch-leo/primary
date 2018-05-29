@@ -232,6 +232,25 @@
   console.log(obj); //{a: 1, b: 2, c: 3}
   console.log(o1); //{a: 1, b: 2, c: 3}, 目标对象被改变了
 ```
+* Object.keys(obj) 一个表示给定对象的所有可枚举属性的字符串数组。
+```js
+   // simple array
+   var arr = ['a', 'b', 'c'];
+   console.log(Object.keys(arr)); //['0', '1', '2']
+
+   // array like object
+   var obj = { 0: 'a', 1: 'b', 2: 'c' };
+   console.log(Object.keys(obj)); //['0', '1', '2']
+
+   // getFoo is a property which isn't enumerable
+   var myObj = Object.create({}, {
+     getFoo: {
+       value: function () { return this.foo; }
+     } 
+   });
+   myObj.foo = 1;
+   console.log(Object.keys(myObj)); //['foo']
+```
 * 属性描述符 分为 数据描述符和存取描述符
 > 数据描述符和存取描述符是一个具有值的属性，该值可能是可写的，也可能不是可写的。     
 > 存取描述符是由getter-setter函数对描述的属性。    
@@ -313,13 +332,13 @@
     }
   })
   console.log(a) //{b: 1, name: "张三"}
-  console.log(Object.keys(a))	//["b", "age"]
-  console.log(JSON.stringify(a))	//{"b":1}
+  console.log(Object.keys(a)) //["b", "age"]
+  console.log(JSON.stringify(a)) //{"b":1}
   a.name = '李四'
   a.age = 18
   console.log(a) //{b: 1, name: "李四"}
-  console.log(Object.keys(a))	//["b", "age"]
-  console.log(JSON.stringify(a))	//{"b":1,"age":18}
+  console.log(Object.keys(a)) //["b", "age"]
+  console.log(JSON.stringify(a)) //{"b":1,"age":18}
 ```
 * Object.create(proto, props) 创建一个拥有指定原型和若干个指定属性的对象。
 > props 对应Object.defineProperties(obj, props)的第二个参数
@@ -358,14 +377,53 @@
     console.log('key: ' + key)	// key: a
   }
 ```
+* Object.entries(obj) 返回一个数组，其元素是与直接在object上找到的 可枚举 属性键值对相对应的数组。
+> 属性的顺序与通过手动循环对象的属性值所给出的顺序相同。
+```js
+  var obj = Object.create(null)	// 无原型的对象	
+  console.log(obj)	//{} 无原型
+  obj.name = '1111'
+  console.log(obj)	//{name: "1111"}
+  console.log(obj.__proto__)	//undefined
 
+  function Person () {}
+  var o = Object.create(Person.prototype, {
+    a: {
+      value: 0,
+      configureable: true,
+      enumerable: true,
+      writable: false
+    },
+    b: {
+      value: 1,
+      configureable: true,
+      enumerable: false,
+      writable: true
+    }
+  })
+  console.log(o) //Person {a: 0, b: 1}
+  console.log(o.a) //0
+  console.log(o.b) //1
+  o.a = 2
+  o.b = 3
+  console.log(o) //Person {a: 0, b: 3}
+  console.log(o.a) //0
+  console.log(o.b) //3
 
-
-
-
-
-
-
-
+  for(var key in o) {
+    console.log('key: ' + key)	// key: a
+  }
+```
+* Object.values(obj)：返回一个包含指定对象所有的可枚举属性值的数组，数组中的值顺序和使用for…in循环遍历的顺序一样。 
+* Object.getOwnPropertyDescriptor(obj, prop)：返回指定对象上一个自有属性对应的属性描述符。
+* Object.getOwnPropertyNames(obj)：返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性）组成的数组
+* Object.getPrototypeOf(object)：返回该对象的原型。
+* Object.is(value1, value2)：判断两个值是否是同一个值。
+* Object.isExtensible(obj)：判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。
+* Object.isFrozen(obj)：判断一个对象是否被冻结（frozen）。
+* Object.isSealed(obj)：判断一个对象是否是密封的（sealed）。
+> 密封对象是指那些不可 扩展 的，且所有自身属性都不可配置的（non-configurable）且属性不可删除的对象（其可以是可写的）。
+* Object.preventExtensions(obj)：让一个对象变的不可扩展，也就是永远不能再添加新的属性。
+* Object.setPrototypeOf(obj, prototype)：将一个指定的对象的原型设置为另一个对象或者null
 
 ### 未完待续
