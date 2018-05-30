@@ -81,11 +81,11 @@ CSS:
 * 图片若长大于宽 则水平方向100%；否则垂直方向100%
 ```js
 HTML:
-  <body>
-    <div class="box">
+	<body>
+		<div class="box">
 			<img src="http://via.placeholder.com/100x320"/>
 		</div>
-  </body>
+	</body>
 CSS:
   *{margin:0;padding:0;}
 	.box{width:300px;height:300px;background:#000;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%);}
