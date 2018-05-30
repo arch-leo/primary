@@ -62,13 +62,13 @@ CSS:
 * 图片不能缩放
 ```js
 HTML:
-  <body>
-    <div class="box">
+	<body>
+		<div class="box">
 			<img src="http://via.placeholder.com/100x320"/>
 		</div>
-  </body>
+	</body>
 CSS:
-  *{margin:0;padding:0;}
+	*{margin:0;padding:0;}
 	.box{width:200px;height:200px;background:#000;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%);/*overflow:hidden;*/}
 	.box img{position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);}
 ```
@@ -87,7 +87,7 @@ HTML:
 		</div>
 	</body>
 CSS:
-  *{margin:0;padding:0;}
+	*{margin:0;padding:0;}
 	.box{width:300px;height:300px;background:#000;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%);}
 	.box{line-height: 300px;text-align:center;font-size:0;}
 	.box img{max-width: 100%;max-height: 100%;vertical-align: middle;}
