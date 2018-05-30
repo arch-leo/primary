@@ -56,3 +56,21 @@ CSS:
 #### 效果预览
 ![preview](https://github.com/arch-leo/primary/blob/master/images/1.jpg)
 
+>2.需求  
+* 容器定高定宽
+*	图片水平垂直居中
+*	图片不能缩放
+```js
+HTML:
+  <body>
+    <div class="box">
+			<img src="http://via.placeholder.com/100x320"/>
+		</div>
+  </body>
+CSS:
+  *{margin:0;padding:0;}
+	.box{width:200px;height:200px;background:#000;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%);/*overflow:hidden;*/}
+	.box img{position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);}
+```
+#### 效果预览
+![preview](https://github.com/arch-leo/primary/blob/master/images/4.jpg)
