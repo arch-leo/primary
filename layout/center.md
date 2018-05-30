@@ -87,10 +87,10 @@ HTML:
     </div>
   </body>
 CSS:
-*{margin:0;padding:0;}
-.box{width:300px;height:300px;background:#000;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%);}
-.box{line-height: 300px;text-align:center;font-size:0;}
-.box img{max-width: 100%;max-height: 100%;vertical-align: middle;}
+  *{margin:0;padding:0;}
+  .box{width:300px;height:300px;background:#000;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%);}
+  .box{line-height: 300px;text-align:center;font-size:0;}
+  .box img{max-width: 100%;max-height: 100%;vertical-align: middle;}
 ```
 #### 效果预览
 ![preview](https://github.com/arch-leo/primary/blob/master/images/5.jpg)
