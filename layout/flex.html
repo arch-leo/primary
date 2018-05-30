@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script>
+      // rem布局方式 屏幕越大 看的越多
+      ! function (e) {
+        function t(a) {
+          if (i[a]) return i[a].exports
+          var n = i[a] = {
+            exports: {},
+            id: a,
+            loaded: !1
+          };
+          return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+        }
+        var i = {};
+        return t.m = e, t.c = i, t.p = '', t(0)
+      }([function (e, t) {
+        'use strict'
+        Object.defineProperty(t, '__esModule', {
+          value: !0
+        });
+        var i = window;
+        t['default'] = i.flex = function (e, t) {
+          var a = e || 100,
+            n = t || 1,
+            r = i.document,
+            o = navigator.userAgent,
+            d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+            l = o.match(/U3\/((\d+|\.){5,})/i),
+            c = l && parseInt(l[1].split('.')
+              .join(''), 10) >= 80,
+            p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+            s = i.devicePixelRatio || 1;
+          p || d && d[1] > 534 || c || (s = 1);
+          var u = 1 / s,
+            m = r.querySelector('meta[name="viewport"]');
+          m || (m = r.createElement('meta'), m.setAttribute('name', 'viewport'), r.head.appendChild(m)), m.setAttribute(
+            'content', 'width=device-width,user-scalable=no,initial-scale=' + u + ',maximum-scale=' + u +
+            ',minimum-scale=' + u), r.documentElement.style.fontSize = a / 2 * s * n + 'px'
+        }, e.exports = t['default']
+      }]);
+      flex(100, 1);
+      window.addEventListener('resize', flex, false);
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,li{
+      	list-style: none;
+      }
+      html, body {
+        height: 100%;
+        font-size: .28rem;
+      }
+      
+      .container {
+        height: 100%;
+        width: 100%;
+        max-width: 12rem;
+        margin: 0 auto;
+        background: #f5f5f5;
+      }
+      
+      .header, .footer {
+        height: .8rem;
+        background: blue;
+        color: #fff;
+        line-height: .8rem;
+        text-align: center;
+      }
+      .header{
+      }
+      .footer{
+      	margin-top: -.8rem;
+      }
+      .mainer {
+      	box-sizing: border-box;
+        height: 100%;
+        padding: .8rem 0;
+        margin-top: -.8rem;
+      }
+      .wrap {
+      	height: 100%;
+      	overflow-x: hidden;
+      	overflow-y: auto;
+      }
+      .flex-title {
+      	border-left: .1rem solid #a0a0a0;
+      	line-height: .6rem;
+      	font-size: .32rem;
+      	padding-left: .2rem;
+      }
+      .flex-nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding: .2rem 0;
+      }
+      .flex-nav li {
+      	box-sizing: border-box;
+      	width: 20%;
+      	height: 0;
+        padding-bottom: 20%;
+      }
+      .flex-nav img {
+      	display: block;
+      	margin: 0 auto;
+      	border: none;
+      	width: 80%;
+      }
+      .flex-nav span {
+      	display: block;
+      	line-height: .4rem;
+      	text-align: center;
+      }
+      
+      .flex-center {
+      	display: flex;
+      	justify-content: center;
+      	align-items: center;
+      }
+      .flex-center li {
+      	width: 1rem;
+      	height: 1rem;
+      	background: #f54343;
+      	color: #fff;
+      	text-align: center;
+      	line-height: 1rem;
+      	border: .02rem solid #a0a0a0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">顶部固定位置</div>
+      <div class="mainer">
+      	<div class="wrap">
+      		<!--小导航-->
+      		<h4 class="flex-title">元素等宽等高布局</h4>
+		      <ul class="flex-nav">
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>
+		        <!--<li>
+		        	<a href="">
+		        		<img src="https://gw.alicdn.com/tps/TB1d30fPVXXXXbGXXXXXXXXXXXX-183-144.png_.webp"/>
+		        		<span>天猫</span>
+		        	</a>
+		        </li>-->
+		      </ul>
+	     		<!--居中n列-->
+	     		<h4 class="flex-title">元素水平居中</h4>
+	     		<ul class="flex-center">
+	     			<li>left</li>
+	     			<li>center</li>
+	     			<li>right</li>
+	     		</ul>
+      	</div>	
+      </div>
+      <div class="footer">底部固定位置</div>
+    </div>
+  </body>
+
+</html>
