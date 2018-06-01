@@ -64,3 +64,16 @@
   
   
 ```
+* mongoose
+> Mongoose是在node.js异步环境下对mongodb进行便捷操作的对象模型工具。  
+> 封装了mongoDB对文档的一些增删改查等常用方法，让nodejs操作mongoDB数据库变得更加容易。
+```js
+  1.安装
+    npm install mongoose
+  2.引用
+    var mongoose = require('mongoose')
+  3.连接
+    var db = mongoose.connect('mongodb://user:pass@localhost:port/database')
+```
+
+
