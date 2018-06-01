@@ -18,7 +18,7 @@
   gen.next() // {value: 3, done: true}
   gen.next() // {value: undifined, done: false}
   
-  //栗子
+  //函数解析 栗子
   function* g() {
     var o = 1;
     var a = yield o++;
@@ -42,4 +42,18 @@
     然后再照常执行剩下的语句。  
     总之，区别就是先有一步先重置值，接下来其他全都一样。  
   */
+  //for of 遍历迭代器
+  function* foo() {
+    yield 1;
+    yield 2;
+    yield 3;
+    yield 4;
+    yield 5;
+    return 6;
+  }
+  let a = foo();
+  for (let v of a) {
+    console.log(v);
+  }
+  // 1 2 3 4 5
 ```
