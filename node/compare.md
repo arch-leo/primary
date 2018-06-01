@@ -1,4 +1,4 @@
-## express koa koa2 理解与对比
+## express koa koa2 fastify理解与对比
 * express
 > 对应js版本 es5   
 > 异步处理方式 callback 回调嵌套   
@@ -133,3 +133,67 @@
   // I am text2
   
 ```
+* fastify
+> 对应js版本 es7
+> 异步处理方式 async/await+Promise + JSON Schema
+> 特点：更高效（3W+请求/s）
+```js
+  //栗子
+  const fastify = require('fastify')()
+  fastify.route({
+    method: 'GET',
+    url: '/',
+    schema: {
+      // request needs to have a querystring with a `name` parameter
+      querystring: {
+        name: { type: 'string' }
+      },
+      // the response needs to be an object with an `hello` property of type 'string'
+      response: {
+        200: {
+          type: 'object',
+          properties: {
+            hello: { type: 'string' }
+          }
+        }
+      }
+    },
+    // this function is executed for every request before the handler is executed
+    beforeHandler: async (request, reply) => {
+      // E.g. check authentication
+    },
+    handler: async (request, reply) => {
+      return { hello: 'world' }
+    }
+  })
+
+  const start = async () => {
+    try {
+      await fastify.listen(3000)
+      fastify.log.info(`server listening on ${fastify.server.address().port}`)
+    } catch (err) {
+      fastify.log.error(err)
+      process.exit(1)
+    }
+  }
+  start()
+  
+  //为什么更高效 处理速度更快？
+  答案就是　JSON　schema！
+  其比较独有的特色其实是针对输出 JSON 的场景。其内置了基于 JSON schema 的 validation 和 serialization。这是其他框架没有的。  
+  通常 JSON.stringify 的执行逻辑是什么样的呢？你需要对参数判断下类型，根据不同的类型执行不同的序列化方法，  
+  比如对于字符串你就需要两头加双引号，同时对一些特殊字符（如双引号、反斜杠、所有小于32的 Unicode 字符等）做 escape；  
+  如果是对象，你需要两头加大括号，遍历所有的 key 和 value，并把某些（比如所有的函数）筛掉，   
+  然后递归的对 key 和 value 做合适的序列化……
+  
+  而当你有 JSON schema 时，你就已经知道了类型，知道了对象上需要序列化的 key，  
+  可以直接生成序列化代码，省下了类型判断、遍历key之类的开销。固然你生成的是 JS 代码，
+  但是拜现代 JS 引擎的 JIT 优化所赐，其直接的属性访问、方法调用之类的效率完全不输于原生实现。  
+ 
+  说白了当一个请求过来的时候 http://www.abc.com?a=1&b=2 
+  服务器需要进行相应的url解析并序列化参数 然后进行查找数据库之类的操作
+  但是 JSON　schema 做法就是 我把你需要解析的数据我提前给你序列化好，你直接用就好了
+```
+
+
+
