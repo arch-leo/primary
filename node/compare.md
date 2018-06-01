@@ -1,9 +1,23 @@
 ## express koa koa2 理解与对比
-*
+* express
+> 对应js版本 es5   
+> 异步处理方式 callback 回调嵌套   
+> 特点：内置中间件丰富，功能强大，不过回调嵌套不利于代码维护和可读性
+```js
+  fs.readFile('/etc/passwd', function (err, data) {
+    if (err) throw err;
+    fs.readFile('/etc/passwd2', function (err, data2) {
+      if (err) throw err;
+      // 在这里处理data和data2的数据
+    })
+  })
+```
 * koa
 > 对应js版本 es6  又称 es2015,
 > 异步处理方式 Generator函数+yield语句+Promise
-> 特点：1.不在核心方法中绑定任何中间件，相比express更轻小  2.解决了express的异步回调大坑，代码可读性增强
+> 特点：1.不在核心方法中绑定任何中间件，相比express更轻小  
+>      2.使用内部co中间件将异步变同步，代码可读性增强
+>      3.Generator可以暂停函数执行，返回任意表达式的值。
 ```js
   //代码构成
   function* g() {
@@ -56,4 +70,68 @@
     console.log(v);
   }
   // 1 2 3 4 5
+```
+* koa2
+> 对应js版本 es7  又称 es2016,
+> 异步处理方式 async/await+Promise
+> 特点：1.相比koa去除了co中间件，进一步精简内核
+>      2.一定程度解决了express的异步回调大坑，代码可读性增强
+>      3.promise的then()方法链式调用，代码可读性也存在问题
+```js
+  //例子
+  async function asyncAwaitFn(str) {
+    return await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(str)
+      }, 1000);
+    })
+  }
+  const parallel = async () => { //并行执行
+    console.time('parallel')
+    const parallelOne = asyncAwaitFn('string 1');
+    const parallelTwo = asyncAwaitFn('string 2')
+    //直接打印
+    console.log(await parallelOne)
+    console.log(await parallelTwo)
+    console.timeEnd('parallel')
+  }
+  parallel()
+  
+  //co中间件简易实现
+  function co(generator){
+    var gen = generator();
+    var next = function(data){
+      var result = gen.next(data);
+      if(result.done) return;
+      if (result.value instanceof Promise) {
+        result.value.then(function (d) {
+          next(d);
+        }, function (err) {
+          next(err);
+        })
+      }else {
+        next();
+      }
+    };
+    next();
+  }
+  
+  //使用
+  co(function*(){
+    var text1 = yield new Promise(function(resolve){
+      setTimeout(function(){
+        resolve("I am text1");
+      }, 1000);
+    });
+    console.log(text1);
+    var text2 = yield new Promise(function(resolve){
+      setTimeout(function(){
+        resolve("I am text2");
+      }, 1000);
+    });
+    console.log(text2);
+  });
+  // I am text1 
+  // I am text2
+  
 ```
