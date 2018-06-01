@@ -14,4 +14,5 @@
   4.指定数据库 cmd: mongod --dbpath E:\database\project1\data\db --logpath E:\database\project1\data\log\mongodb.log
   
   5.启动数据库 cmd: mongo
+  mongod --dbpath=E:\database\project1\db --logpath=E:\database\project1\log\db.log --serviceName=MyDb --port=27018 --logappend --install
 ```
