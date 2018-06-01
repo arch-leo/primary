@@ -72,13 +72,11 @@
   // 1 2 3 4 5
 ```
 * koa2
-> 对应js版本 es7  又称 es2016,
-> 异步处理方式 async/await+Promise
-> 特点：1.相比koa去除了co中间件，进一步精简内核
->      2.一定程度解决了express的异步回调大坑，代码可读性增强
->      3.promise的then()方法链式调用，代码可读性也存在问题
+> 对应js版本 es7  又称 es2016   
+> 异步处理方式 async/await+Promise   
+> 特点：相比koa去除了co中间件，进一步精简内核 ，代码可读性增强
 ```js
-  //例子
+  //栗子
   async function asyncAwaitFn(str) {
     return await new Promise((resolve, reject) => {
       setTimeout(() => {
