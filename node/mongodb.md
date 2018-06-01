@@ -57,4 +57,10 @@
   // 强制删除mongodb服务
   sc delete mongodb
   
+  //可视化工具 
+  mongodb compass
+  robo3t 
+  
+  
+  
 ```
