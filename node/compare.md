@@ -14,10 +14,10 @@
 ```
 * koa
 > 对应js版本 es6  又称 es2015,
-> 异步处理方式 Generator函数+yield语句+Promise
-> 特点：1.不在核心方法中绑定任何中间件，相比express更轻小  
->      2.使用内部co中间件将异步变同步，代码可读性增强
->      3.Generator可以暂停函数执行，返回任意表达式的值。
+> 异步处理方式 Generator函数+yield语句+Promise　　
+> 特点：1.不在核心方法中绑定任何中间件，相比express更轻小  　　
+>      2.使用内部co中间件将异步变同步，代码可读性增强　　　
+>      3.Generator可以暂停函数执行，返回任意表达式的值。　　
 ```js
   //代码构成
   function* g() {
