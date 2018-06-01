@@ -132,10 +132,10 @@ arr.sort(function(a, b){
 console.log(arr)            // [1, 1, 3, 5, 6]
 ```
 ## 类数组
-> 是object对象 是类数组,有length属性
-> const obg = {length:2, 0:'first', 1:'second'}
+> 是object对象 是类数组,有length属性   
+> const obj = {length:2, 0:'first', 1:'second'}
 ```js
-console.log(Array.prototype.slice.call(obg,0));     // ["first", "second"]
+console.log(Array.prototype.slice.call(obj,0)) // ["first", "second"]
 ```
 > 未完待续。。。
 
