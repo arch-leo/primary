@@ -22,3 +22,6 @@
 ### node相关
 * [node框架理解](https://github.com/arch-leo/primary/blob/master/node/compare.md)
 * [mongodb和mongoose](https://github.com/arch-leo/primary/blob/master/node/mongodb.md)
+
+### 调试工具
+* [weinre真机调试](https://github.com/arch-leo/primary/blob/master/appdebug/weinre.md)
