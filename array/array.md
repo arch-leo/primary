@@ -57,7 +57,7 @@ console.log(tempArr)  // [1, 5, 6, 2, 8, 3, 10]
 // 方法1
 let obj = {}
 let tempArr = []
-arr4.forEach(v => {
+arr.forEach(v => {
   if (obj4[v + typeof v]) {
     tempArr.push(v)
   } else {
