@@ -42,8 +42,8 @@ console.log(flatten(arr))       // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1
 
 // 可控扁平化 forEach
 let res = []
-let count = 0
 function flatten (arr, depth) {
+  let count = 0
   arr.forEach(function(i) {
     if (i instanceof Array && count < depth) {
       count++
