@@ -54,14 +54,14 @@
       var set = new Set([1, 2, 3])
       set.forEach(function(value, key, setObj) {
           console.log(value + '---' + key + '---' + setObj);
-          //value - Map对象里每一个键值对的值
-          //key - Map对象里每一个键值对的键
-          //mapObj - Map对象本身
+          //value - Set对象里每一个键值对的值
+          //key - Set对象里每一个键值对的键
+          //setObj - Set对象本身
           console.log(this); //this === window
       });
 
       set.forEach(function(value, key, setObj) {
           console.log(value + '---' + key + '---' + setObj);
-          console.log(this);    //this === map
+          console.log(this);    //this === set
       }, set)
 ```
