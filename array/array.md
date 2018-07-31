@@ -91,7 +91,7 @@ function bubbleSort(array) {
 }
 console.log(bubbleSort(arr))    //  [1, 1, 3, 5, 6]
 
-function bubbleSort1(arr) {
+function bubbleSort1(array) {
   var len = array.length
   for (var i = 0;i < len; i++) {
     for (var j = len - 1; j > i; j--) {
