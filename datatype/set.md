@@ -30,7 +30,7 @@
    --- clear() 清除所有成员，无返回值
    
       console.log(set);     //Set(2) {1, 2}
-      set.clear()           //false
+      set.clear()           //
       console.log(set);     //Set(0) {}
       
   --- keys() 返回键名的遍历器
