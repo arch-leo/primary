@@ -28,10 +28,10 @@
       console.log(set);   //{2}
       
    --- clear() 清除所有成员，无返回值
-
-      set.has(1)          //false
-      set.has(2)          //true
-      console.log(set);   //{2}
+   
+      console.log(set);     //Set(2) {1, 2}
+      set.clear()           //false
+      console.log(set);     //Set(0) {}
       
   --- keys() 返回键名的遍历器
   
