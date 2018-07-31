@@ -39,7 +39,7 @@
   Map.prototype.constructor 返回创建给map实例的构造函数，默认是Map函数。   
   Map.prototype.size 返回Map对象的键值对的数量。
   
-  let map = new Map([['a',1], ['b', 2]]]);
+  let map = new Map([['a',1], ['b', 2]]);
   console.log(map.constructor)    //function Map() { [native code] }
   console.log(map.size)           //2
 
