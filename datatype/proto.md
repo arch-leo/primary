@@ -46,8 +46,6 @@
     var p = new Person('小明')
     p.sayName()		//Person:小明
     
-    解释：
-      p.prototype.__proto__ === Person.prototype   //true
   ```
   ```js
     function Person (name) {
