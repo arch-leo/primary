@@ -25,3 +25,6 @@
 
 ### 调试工具
 * [weinre真机调试](https://github.com/arch-leo/primary/blob/master/appdebug/weinre.md)
+
+### 函数节流和函数防抖
+* [函数节流和函数防抖](https://github.com/arch-leo/primary/blob/master/function/throttle-debounce.md)
