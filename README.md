@@ -1,6 +1,6 @@
 ## 知识点总结与巩固
 
-<div style="text-align:center;">![chiji](https://github.com/arch-leo/primary/blob/master/timg.jpg)</div>
+<div style="text-align:center;"><img src=https://github.com/arch-leo/primary/blob/master/timg.jpg /></div>
 
 ### 对象
 * [Map对象](https://github.com/arch-leo/primary/blob/master/datatype/map.md)
