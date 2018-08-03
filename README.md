@@ -5,7 +5,7 @@
 ### 对象
 * [Map对象](https://github.com/arch-leo/primary/blob/master/datatype/map.md)
 * [Set对象](https://github.com/arch-leo/primary/blob/master/datatype/set.md)
-* [原始数据和引用数据](https://github.com/arch-leo/primary/blob/master/datatype/set.md)
+* [原始数据和引用数据](https://github.com/arch-leo/primary/blob/master/datatype/type.md)
 * [Object综合](https://github.com/arch-leo/primary/blob/master/datatype/object.md)
 * [原型和原型链](https://github.com/arch-leo/primary/blob/master/datatype/proto.md)
 * [对象浅拷贝和深拷贝](https://github.com/arch-leo/primary/blob/master/datatype/copy.md)
