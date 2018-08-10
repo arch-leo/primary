@@ -31,8 +31,6 @@ console.log(choose([0, 14, 11, 1, 2, 12, 8, 9, 5, 7, 6, 4, 3], 12))
 ```
 ##  实现二维数组里面的元素排列组合
 ```js
-// 直接排除for 多层循环  性能太低
-//正确做法 先排序 然后二分查找
 var arrays = [
   ['a0', 'a1', 'a2'],
   ['b0', 'b1'],
@@ -44,7 +42,6 @@ function getArrayByArrays(arrays) {
   for (var i = 0; i < arrays.length; i++) {
     arr = getValuesByArray(arr, arrays[i]);
   }
-  
   return arr;
 }
 
@@ -56,9 +53,8 @@ function getValuesByArray(arr1, arr2) {
       var v2 = arr2[j];
       var value = v1 + v2;
       arr.push(value);
-    };
-  };
-  
+    }
+  } 
   return arr;
 }
 getArrayByArrays(arrays);
