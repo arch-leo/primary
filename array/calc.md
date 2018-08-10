@@ -60,4 +60,36 @@ function getValuesByArray(arr1, arr2) {
 getArrayByArrays(arrays);
 // ['a0b0c0d0', 'a0b0c0d1', 'a0b1c0d0', 'a0b1c0d1', 'a1b0c0d0', 'a1b0c0d1', 'a1b1c0d0', 'a1b1c0d1', 'a2b0c0d0', 'a2b0c0d1', 'a2b1c0d0', 'a2b1c0d1']
 ```
+
+##  随机生成1-50之间的不重复的10个元素的数组
+```js
+//方法一
+function getArr (arr) {
+  arr = arr ? arr : [] 
+  if (arr.length < 10) {
+    var num = Math.floor(Math.random() * 50) + 1
+      if (arr.indexOf(num) < 0) {
+        arr.push(num)
+
+      }
+      getArr(arr)
+  }
+    return arr
+}
+console.log(getArr())
+
+//方法二
+var arr = []
+while(arr.length < 10) {
+  for (var i = 0; i > -1; i++) {
+    var num = Math.floor(Math.random() * 50) + 1
+    if (arr.indexOf(num) < 0) {
+      arr.push(num)
+      break;
+    }
+  }
+}
+console.log(arr)
+```
+
 ### 扩展知识 01背包问题 （百度搜索）
