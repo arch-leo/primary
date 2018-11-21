@@ -131,6 +131,52 @@ arr.sort(function(a, b){
 })
 console.log(arr)            // [1, 1, 3, 5, 6]
 ```
+## 数组 全数组排列
+> const arr = [1, 2, 3]
+```js
+// 方法1
+const calc1 = str => {
+  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+  return str.split('').reduce((acc, letter, i) =>
+    acc.concat(calc1(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
+};
+
+const arr1 = calc1('123');
+console.log(arr1); // [[1, 2, 3],[1, 3, 2],[2, 1, 3],[2, 3, 1],[3, 1, 2],[3, 2, 1]]
+// 方法2
+function permute(input) {
+  var permArr = [],
+  usedChars = [];
+  function main(input){
+    var i, ch;
+    for (i = 0; i < input.length; i++) {
+      ch = input.splice(i, 1)[0];
+      usedChars.push(ch);
+      if (input.length == 0) {
+        permArr.push(usedChars.slice());
+      }
+      main(input);
+      input.splice(i, 0, ch);
+      usedChars.pop();
+    }
+    return permArr
+  }
+  return main(input);
+};
+console.log(permute([1,2,3])); // [[1, 2, 3],[1, 3, 2],[2, 1, 3],[2, 3, 1],[3, 1, 2],[3, 2, 1]]
+
+// 扩展
+const str = '123';
+const calc1 = str => {
+  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+  return str.split('').reduce((acc, letter, i) =>
+    acc.concat(calc1(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
+};
+
+const arr1 = calc1('123');
+console.log(arr1); // ["123", "132", "213", "231", "312", "321"]
+```
+
 ## 类数组
 > 是object对象 是类数组,有length属性   
 > const obj = {length:2, 0:'first', 1:'second'}
