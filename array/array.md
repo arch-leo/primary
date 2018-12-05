@@ -130,6 +130,9 @@ arr.sort(function(a, b){
   return a-b
 })
 console.log(arr)            // [1, 1, 3, 5, 6]
+// 方法4 quickSort es6
+const quickSort = ([head, ...tail]) => head == null ? [] : [...quickSort(tail.filter(x => x < head)), head, ...quickSort(tail.filter(x => x >= head))];
+quickSort(arr);
 ```
 ## 数组 全数组排列
 > const arr = [1, 2, 3]
