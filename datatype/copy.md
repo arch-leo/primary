@@ -117,3 +117,30 @@
   console.log(o)
   console.log(copy)
 ```
+```js
+function deepCopy (obj, cache = []) {
+  function find (list, f) {
+    return list.filter(f)[0]
+  }
+  // 不为对象 直接返回
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+  // 如果对象值指向对象本身 循环引用 返回
+  const hit = find(cache, c => c.original === obj)
+  if (hit) {
+    return hit.copy
+  }
+  const copy = Array.isArray(obj) ? [] : {}
+  //
+  cache.push({
+    original: obj,
+    copy
+  })
+  Object.keys(obj).forEach(key => {
+    console.log(key);
+    copy[key] = deepCopy(obj[key], cache)
+  })
+  return copy
+}
+```
