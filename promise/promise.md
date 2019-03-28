@@ -1,9 +1,12 @@
 ## 手工实现promise
 ```js
-function _Promise(resolver) {
+function _Promise(handler) {
   this.status = 'pending';
-  this.result = ''
-  resolver(this.resolve.bind(this), this.reject.bind(this))
+  this.result = '';
+  this.handler = function(resolve, reject) {
+    return handler.call(this, resolve, reject);
+  }
+  this.handler(this.resolve.bind(this), this.reject.bind(this))
 }
 
 _Promise.prototype.resolve = function(result) {
