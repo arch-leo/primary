@@ -15,6 +15,12 @@
 * [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/array/flatten.md)
 * [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/calc.md)
 
+### 函数
+* [bind call apply实现](https://github.com/arch-leo/primary/blob/master/function/call-apply-bind.md)
+* [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/array/flatten.md)
+* [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/calc.md)
+* [函数节流和函数防抖](https://github.com/arch-leo/primary/blob/master/function/throttle-debounce.md)
+
 ### 布局
 * [元素居中问题](https://github.com/arch-leo/primary/blob/master/layout/center.md)
 * [flex布局研究](https://github.com/arch-leo/primary/blob/master/layout/flex.html)
@@ -25,6 +31,3 @@
 
 ### 调试工具
 * [weinre真机调试](https://github.com/arch-leo/primary/blob/master/appdebug/weinre.md)
-
-### 函数节流和函数防抖
-* [函数节流和函数防抖](https://github.com/arch-leo/primary/blob/master/function/throttle-debounce.md)
