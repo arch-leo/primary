@@ -10,15 +10,16 @@
 * [原型和原型链](https://github.com/arch-leo/primary/blob/master/datatype/proto.md)
 * [对象浅拷贝和深拷贝](https://github.com/arch-leo/primary/blob/master/datatype/copy.md)
 
-### 数组
-* [检测数组/查重/去重/排序](https://github.com/arch-leo/primary/blob/master/array/array.md)
-* [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/array/数组扁平化.md)
-* [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/calc.md)
-
-### 函数
-* [bind call apply实现](https://github.com/arch-leo/primary/blob/master/function/实现call-apply-bind.md)
-* [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/整数元素数组中任选2个数和为M.md)
-* [函数节流和函数防抖](https://github.com/arch-leo/primary/blob/master/function/throttle-debounce.md)
+### 面试必备
+* [检测数组/查重/去重/排序](https://github.com/arch-leo/primary/blob/master/面试必备/检测数组-查重-去重-排序.md)
+* [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/面试必备/数组扁平化.md)
+* [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/面试必备/整数元素数组中任选2个数和为M.md)
+* [bind call apply实现](https://github.com/arch-leo/primary/blob/master/面试必备/实现call-apply-bind.md)
+* [函数参数为函数并且this指向不变](https://github.com/arch-leo/primary/blob/master/面试必备/函数参数为函数并且this指向不变.md)
+* [函数节流和函数防抖](https://github.com/arch-leo/primary/blob/master/面试必备/函数节流和函数防抖.md)
+* [手写promise](https://github.com/arch-leo/primary/blob/master/面试必备/手写promise.md)
+* [js实现控制并发请求函数](https://github.com/arch-leo/primary/blob/master/面试必备/js实现控制并发请求函数.md)
+* [二叉树](https://github.com/arch-leo/primary/blob/master/面试必备/二叉树.md)
 
 ### 布局
 * [元素居中问题](https://github.com/arch-leo/primary/blob/master/layout/center.md)
