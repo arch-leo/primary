@@ -12,13 +12,12 @@
 
 ### 数组
 * [检测数组/查重/去重/排序](https://github.com/arch-leo/primary/blob/master/array/array.md)
-* [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/array/flatten.md)
+* [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/array/数组扁平化.md)
 * [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/calc.md)
 
 ### 函数
-* [bind call apply实现](https://github.com/arch-leo/primary/blob/master/function/call-apply-bind.md)
-* [数组扁平化flatten](https://github.com/arch-leo/primary/blob/master/array/flatten.md)
-* [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/calc.md)
+* [bind call apply实现](https://github.com/arch-leo/primary/blob/master/function/实现call-apply-bind.md)
+* [从整数元素数组中任选2个数，和为M](https://github.com/arch-leo/primary/blob/master/array/整数元素数组中任选2个数和为M.md)
 * [函数节流和函数防抖](https://github.com/arch-leo/primary/blob/master/function/throttle-debounce.md)
 
 ### 布局
