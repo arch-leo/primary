@@ -20,6 +20,7 @@
 * [手写promise](https://github.com/arch-leo/primary/blob/master/面试必备/手写promise.md)
 * [js实现控制并发请求函数](https://github.com/arch-leo/primary/blob/master/面试必备/js实现控制并发请求函数.md)
 * [二叉树](https://github.com/arch-leo/primary/blob/master/面试必备/二叉树.md)
+* [继承](https://github.com/arch-leo/primary/blob/master/面试必备/继承.md)
 
 ### 布局
 * [元素居中问题](https://github.com/arch-leo/primary/blob/master/layout/center.md)
