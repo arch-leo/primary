@@ -5,20 +5,20 @@
 * 浏览器会的域名对应的ip地址后 发起http的三次握手
 * 浏览器给web服务器发送一个http请求
 * 请求过程
-> >请求行
-分为请求方法、url、http协议三个字段 如 GET /index.html HTTP/1.1
+> #### 请求行
+> 分为请求方法、url、http协议三个字段 如 GET /index.html HTTP/1.1  
 get：一般用于查询/获取数据 如网页上的链接、地址栏中的网址
 url？后是携带的数据，一般大小不超过1024个字符
 post：一般用于form表单提交数据 传输的数据量大，键值对类型
-	  head、put、delete等不常用
-请求头
-键值对出现 典型的请求头：
+head、put、delete等不常用
+> #### 请求头
+> 键值对出现 典型的请求头：
 User-Agent  浏览器类型
 Accept 客户端可以接受的内容类型   (text/html,application/xml,*/*)
-			Host 主机名
-			Accept-Language 客户端可接受的自然语言
-			Accept-Encoding 客户端可接受的编码压缩格式
-			Cookie 存储在客户端的扩展字段
+	Host 主机名
+	Accept-Language 客户端可接受的自然语言
+	Accept-Encoding 客户端可接受的编码压缩格式
+	Cookie 存储在客户端的扩展字段
 空行 结束消息 
 请求体 form data一般出现在post请求中
 b>响应过程
