@@ -22,6 +22,7 @@
 * [二叉树](https://github.com/arch-leo/primary/blob/master/algorithm/二叉树.md)
 * [继承](https://github.com/arch-leo/primary/blob/master/algorithm/继承.md)
 * [整数数组中选择质数-合数集合](https://github.com/arch-leo/primary/blob/master/algorithm/从整数数组中选取质数-合数集合.md)
+* [水坑&斐波那契数列](https://github.com/arch-leo/primary/blob/master/algorithm/水坑&放书.md)
 
 ### 布局
 * [元素居中问题](https://github.com/arch-leo/primary/blob/master/layout/center.md)
